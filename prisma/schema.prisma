@@ -13,5 +13,6 @@ datasource db {
 model Todo {
   id Int @id @default(autoincrement())
   done Boolean @default(false)
+  editing Boolean @default(false)
   text String
 }

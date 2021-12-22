@@ -16,6 +16,7 @@ export class AppController {
   async addTodo(@Body() todo) {
     await this.prismaService.todo.create({
       data: {
+        editing: todo.editing,
         done: todo.done,
         text: todo.text
       }
@@ -26,6 +27,7 @@ export class AppController {
   async changeTodo(@Param("id") id, @Body() todo) {
     await this.prismaService.todo.update({
       data: {
+        editing: todo.editing,
         done: todo.done,
         text: todo.text
       },
